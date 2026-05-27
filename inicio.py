@@ -1,0 +1,1 @@
+print("Bem vindo a Monarquia Útopica Absolutista do Juninho")
