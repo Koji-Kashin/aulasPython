@@ -6,13 +6,15 @@
 print("Boa noite :) ")
 print("Me informe o seu nome: ")
 
-# Variáveis já definidas
+# Criação de variáveis
 nome = "Juninho"
 cidade = "RJ"
 
-# Solicita idade do usuário e mostra na tela a idade digitada
+# Utiliza variáveis para mostrar na tela a informação dentro dela
 print("Seu nome é:", nome)
 print("Sua cidade é:", cidade)
+
+#Solicito a idade e guardo ela na variável e mostro na tela
 print("Digite a sua idade:")
 idade = input()
 print("Sua idade é:", idade)
