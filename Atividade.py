@@ -14,7 +14,7 @@ cidade = "RJ"
 print("Seu nome é:", nome)
 print("Sua cidade é:", cidade)
 
-#Solicito a idade e guardo ela na variável e mostro na tela
+# Solicito a idade e guardo ela na variável e mostro na tela
 print("Digite a sua idade:")
 idade = input()
 print("Sua idade é:", idade)
