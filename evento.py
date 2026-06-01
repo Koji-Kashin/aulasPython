@@ -1,39 +1,43 @@
-"""
-#Sistema de elegibilidade
-para Evento Universitário
+# Sistema de Elegibilidade para Evento Universitário
 
-"""
+# Entrada de dados do estudante
+nome = input("Digite o nome do estudante: ")
+idade = int(input("Digite a idade: "))
+frequencia = float(input("Digite o percentual de frequência: "))
+pendencia = input("Possui pendência financeira? (sim/não): ").strip().lower()
+matriculado = input("Está matriculado? (sim/não): ").strip().lower()
+valor_base = float(input("Digite o valor base do ingresso: R$ "))
 
-# Iniciando o sistema
-print("Carregando sistema...")
+# Conversão das respostas para valores lógicos
+tem_pendencia = pendencia == "sim"
+esta_matriculado = matriculado == "sim"
 
-valorIngresso = 620.00
-# Desconto caso frequência > 90% (20% desconto)
-desconto = 20
+# Verificação dos critérios de elegibilidade
+# Para estar apto, todas as condições precisam ser verdadeiras
+apto = idade >= 18 and esta_matriculado and frequencia >= 75 and not tem_pendencia
 
-# Mensagem de boas-vindas
-print(
-    "Bem-vindo ao sistema de Elegiblidade para a festança e curtição universitária\n"
-    "Precisamos das seguintes informações para prosseguir com o seu ingresso e desconto..."
-)
+# Cálculo inicial do valor final
+valor_final = valor_base
 
-# Coleta de dados para comparações...
-nome = input(
-    "Digite o seu nome: ")
-matricula = input(
-    "Você está matriculado em algum curso? (responda com Sim ou Não apenas....)"
-)
+# Aplicação do desconto de 20%, caso a frequência seja superior a 90%
+if frequencia > 90:
+    desconto = valor_base * 0.20
+    valor_final = valor_base - desconto
+else:
+    desconto = 0
 
-idade = int(input("Agora digite a sua idade em números: "))
+# Saída de dados
+print("\n--- Resultado ---")
+print(f"Nome do estudante: {nome}")
 
-freq = int(input("Digite o seu percentual de frequência (Ex: 95%): "))
+if apto:
+    print("Situação: Apto")
+    print(f"Valor final do ingresso: R$ {valor_final:.2f}")
 
-# Variável para pendência finânceira
-divida = input("Você possui pendências finânceiras??")
-
-
-# Verificação de elegebilidade...
-
-if (idade < 18):
-    print("Vá crescer primeiro!!!")
-    
+    if desconto > 0:
+        print("Desconto aplicado: 20%")
+    else:
+        print("Desconto aplicado: Não houve desconto")
+else:
+    print("Situação: Não apto")
+    print("Valor final do ingresso: Não aplicável")
