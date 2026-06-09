@@ -33,10 +33,7 @@ match opcao:
         limite_permitido = salario * limiteParcela
         
         if(parcela_Mensal <= limite_permitido):
-            print(f"O valor do imóvel é de: R$ {valorImovel:.2f} \n"
-                  f"O valor total do financiamento é: R$ {valor_financiamento:.2f} \n"
-                  f"O valor das parcelas é: R$ {parcela_Mensal:.2f} \n"
-                  "--- Financiamento!! ---")                                 
+            print(f"O valor do imóvel é de: R$ {valorImovel:.2f} \n O valor total do financiamento é: R$ {valor_financiamento:.2f} \nO valor das parcelas é: R$ {parcela_Mensal:.2f} \n  --- Financiamento!! ---")                                 
         else:
             print(" --- Financiamento NEGADO! --- ")            
     case 2:
