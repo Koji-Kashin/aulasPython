@@ -22,4 +22,4 @@ print(potencia)
 pot = int(input("Digite o primeiro para exponência-lo: "))
 expoente = int(input("Digite agora o expoente: "))
 
-print(f'Resultado da potência é: {math.pow(pot,expoente)}')
+print(f"Resultado da potência é: {math.pow(pot,expoente)}")
